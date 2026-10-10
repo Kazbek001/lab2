@@ -1,0 +1,93 @@
+:root{--primary: #0d2534;--accent:#c5a059;--accent-hover:#a9853f;--text:#1f2937;--white:#fff;--border:#e5e7eb}
+*{box-sizing:border-box;margin:0;padding:0}
+/* Task 9: каркас страницы на Grid */
+body{font-family:'Segoe UI',Tahoma,Verdana,sans-serif;color:var(--text);line-height:1.6}
+header{background:var(--primary);color:var(--white);padding:12px 0;position:sticky;top:0;z-index:1000}
+main{min-height:60vh}
+footer{background:var(--primary);color:var(--white);padding:40px 0 20px;margin-top:50px}
+.container{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
+.header-row{display:grid;grid-template-columns:1fr auto;grid-template-areas:"logo cta" "nav nav";align-items:center;gap:8px 16px}
+.logo{grid-area:logo;font-size:24px;font-weight:bold;letter-spacing:2px;color:var(--accent)}
+header nav{grid-area:nav;overflow-x:auto;white-space:nowrap}
+header .btn{grid-area:cta}
+nav a{color:var(--white);text-decoration:none;margin:0 10px 0 0;font-weight:500;transition:.3s}
+nav a:hover,nav a.active{color:var(--accent)}
+.btn{display:inline-block;padding:10px 22px;background:var(--accent);color:var(--white);text-decoration:none;border-radius:4px;border:none;cursor:pointer;transition:.3s;font-weight:600}
+.btn:hover{background:var(--accent-hover)}
+.btn-outline{background:transparent;border:1px solid var(--accent);color:var(--accent)}
+.btn-outline:hover{background:var(--accent);color:var(--white)}
+/* главная: hero / booking / rooms через grid-template-areas */
+.home{display:grid;align-content:start;grid-template-columns:100%;grid-template-areas:"hero" "booking" "rooms"}
+.hero{grid-area:hero;background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80') center/cover;min-height:50vh;display:grid;align-items:center;text-align:center;color:var(--white)}
+.hero h1{font-size:30px;margin-bottom:15px}
+.home>.container{grid-area:booking;position:relative;z-index:10}
+.section{padding:60px 0}
+.home>.section{grid-area:rooms}
+.page-banner{background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80') center/cover;padding:60px 0;text-align:center;color:var(--white)}
+.booking-bar{background:var(--primary);padding:25px;border-radius:8px;margin-top:-40px;color:var(--white)}
+.booking-form,.grid-2,.grid-3,.grid-4{display:grid;grid-template-columns:1fr;gap:20px}
+.form-group{display:flex;flex-direction:column}
+.form-group label{margin-bottom:6px;font-size:13px}
+.form-group input,.form-group select{padding:10px;border-radius:4px;border:1px solid var(--border)}
+.card{background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,.04)}
+.card img{width:100%;height:210px;object-fit:cover}
+.card-body{padding:20px}
+.card-title{font-size:20px;margin-bottom:8px;color:var(--primary)}
+footer a{color:#ccc;text-decoration:none}
+.footer-bottom{text-align:center;border-top:1px solid rgba(255,255,255,.15);padding-top:20px;margin-top:30px;font-size:14px;color:#9ca3af}
+
+/* ===== Task 1: float (страница about.html) — картинка, текст и 3 блока; clearfix возвращает высоту родителю ===== */
+.cf::after{content:"";display:table;clear:both}
+.fl-img,.fl-text,.fl-box{width:100%;margin-bottom:20px}.fl-img{border-radius:8px}
+.fl-box{background:#f3f4f6;padding:16px;border-radius:8px}
+/* ===== Task 2: width (фикс., не сжимается) и max-width (сжимается) ===== */
+.t2{margin-top:30px}.scroll-x{overflow-x:auto}
+.w-fixed{width:700px;background:#fde68a;padding:14px;margin-bottom:12px}
+.w-max{max-width:700px;background:#bbf7d0;padding:14px}
+/* ===== Task 3: display (rooms.html) ===== */
+.tag{display:inline;background:#e5e7eb;border-radius:12px;padding:2px 10px;font-size:13px}
+.tags .tag{display:block;width:fit-content;margin:4px 0}   /* inline -> block: теги встали в столбик */
+.price{display:inline;font-weight:bold}                      /* block -> inline: цена и "/ түн" в одну строку */
+.tag-none,.promo{display:none}                               /* inline span и block p полностью убраны со страницы */
+/* ===== Task 4: overflow (services.html, отзывы) ===== */
+.ov{height:90px;border:2px solid var(--primary);padding:8px;font-size:14px}
+.ov-grid{margin-bottom:90px}
+.ov-visible{overflow:visible}.ov-hidden{overflow:hidden}.ov-scroll{overflow:scroll}.ov-auto{overflow:auto}
+/* ===== Task 5: relative + absolute: карточка relative, бейдж absolute внутри неё ===== */
+.card{position:relative}
+.badge{position:absolute;top:12px;right:12px;background:var(--accent);color:var(--white);padding:4px 12px;border-radius:14px;font-size:13px}
+/* ===== Task 6: fixed. Шапка с меню (contact.html) и блок автора на всех страницах ===== */
+.p-fixed{--hh:110px;padding-top:var(--hh)}
+.p-fixed header{position:fixed;top:0;left:0;right:0}
+.author{position:fixed;right:16px;bottom:16px;background:var(--primary);color:var(--white);padding:8px 14px;border-radius:8px;font-size:13px}
+/* ===== Task 7: sticky. Меню (services.html) top:0 + липкие заголовки секций ===== */
+.p-sticky header{position:static}
+.main-nav{position:sticky;top:0;height:52px;display:flex;align-items:center;background:#0f3d21}
+.main-nav .container{overflow-x:auto;white-space:nowrap}
+.sec-list{list-style:none}
+.sec-list h2{position:sticky;top:52px;background:var(--accent);color:var(--white);padding:8px 16px;z-index:900}
+.sec-list li{min-height:60vh;margin-bottom:20px}.sec-list p{padding:16px}
+/* ===== Task 8: z-index. Слои: фон 1 → контент 10 → бейдж/форма брони 50 → автор 900 → шапка и меню 1000 ===== */
+.bg-layer{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.12;background:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80') center/cover}
+main,footer,.hero,.page-banner{position:relative;z-index:10}
+.booking-bar{position:relative;z-index:50}.badge{z-index:50}
+.author{z-index:900}header,.main-nav{z-index:1000}
+/* Task 10: media queries. Mobile <600 — базовые стили выше */
+@media (min-width:600px){ /* Tablet */
+  .grid-2,.grid-3,.grid-4,.booking-form{grid-template-columns:repeat(2,1fr)}
+  .hero h1{font-size:38px}
+  .fl-img{float:left;width:45%;margin-right:5%}.fl-text{float:right;width:50%}   /* Task 1 */
+  .fl-box{float:left;width:48%;margin:0 4% 20px 0}.fl-box:nth-child(2n){margin-right:0}}
+@media (min-width:1024px){ /* Laptop */
+  .header-row{grid-template-columns:auto 1fr auto;grid-template-areas:"logo nav cta"}
+  header nav{justify-self:center}nav a{margin:0 12px}
+  .grid-3{grid-template-columns:repeat(3,1fr);gap:30px}
+  .grid-4{grid-template-columns:repeat(4,1fr)}
+  .booking-form{grid-template-columns:repeat(4,1fr)}
+  .hero{min-height:65vh}.hero h1{font-size:46px}
+  .fl-box{width:31.33%;margin-right:3%}.fl-box:nth-child(2n){margin-right:3%}.fl-box:nth-child(3n){margin-right:0}
+  .p-fixed{--hh:72px}}
+@media (min-width:1440px){ /* Large screens */
+  .container{max-width:1400px}
+  .hero{min-height:75vh}.hero h1{font-size:58px}
+  .p-fixed{--hh:78px}.grid-3{gap:40px}.card img{height:260px}body{font-size:18px}}

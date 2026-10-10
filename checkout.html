@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QAZER Hotel — Төлем жасау</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg-layer"></div>
+
+<header>
+  <div class="container header-row">
+    <div class="logo">QAZER HOTEL</div>
+    <nav>
+      <a href="index.html">Басты бет</a>
+      <a href="rooms.html">Нөмірлер</a>
+      <a href="services.html">Қызметтер</a>
+      <a href="about.html">Біз туралы</a>
+      <a href="contact.html">Байланыс</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-banner">
+  <h1>Брондауды Растау және Төлем</h1>
+</section>
+
+<main class="section">
+  <div class="container grid-2">
+    <!-- Брондау мәліметтері -->
+    <div class="card" style="padding: 25px;">
+      <h3 style="color: var(--primary); margin-bottom: 15px;">Сіз таңдаған нөмір</h3>
+      <p><strong>Қонақүй:</strong> QAZER Hotel Almaty</p>
+      <p><strong>Бөлме түрі:</strong> <span id="displayRoomName">Standard Room</span></p>
+      <p><strong>Төлем сомасы:</strong> <span id="displayRoomPrice" style="color: var(--accent); font-weight: bold;">49,400 ₸</span></p>
+      <hr style="margin: 15px 0; border: 0; border-top: 1px solid var(--border);">
+      <p style="font-size: 13px; color: #666;">* Картаны растаған соң, көрсетілген сома брондау үшін ұсталынады.</p>
+    </div>
+
+    <!-- Төлем формасы -->
+    <div class="card" style="padding: 25px;">
+      <h3 style="color: var(--primary); margin-bottom: 20px;">Банк картасы</h3>
+      <form onsubmit="event.preventDefault(); processPayment();">
+        <div class="form-group" style="margin-bottom: 15px;">
+          <label>Карта иесінің аты-жөні</label>
+          <input type="text" placeholder="KAZBEK KANALOV" required>
+        </div>
+        <div class="form-group" style="margin-bottom: 15px;">
+          <label>Карта нөмірі</label>
+          <input type="text" maxlength="19" placeholder="0000 0000 0000 0000" required>
+        </div>
+        <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+          <div class="form-group" style="flex: 1;">
+            <label>Мерзімі (ММ/ЖЖ)</label>
+            <input type="text" placeholder="12/28" maxlength="5" required>
+          </div>
+          <div class="form-group" style="flex: 1;">
+            <label>CVV / CVC</label>
+            <input type="password" placeholder="123" maxlength="3" required>
+          </div>
+        </div>
+        <button type="submit" id="payBtn" class="btn" style="width: 100%;">Төлеу және Брондау</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container grid-4">
+    <div><div class="logo">QAZER HOTEL</div><p>Алматы қ., Жандосова 55</p></div>
+    <div><h4>Беттер</h4><p><a href="rooms.html">Нөмірлер</a></p><p><a href="services.html">Қызметтер</a></p></div>
+    <div><h4>Байланыс</h4><p>Тел: +7 (777)-622-56-51</p><p>info@qazer.kz</p></div>
+    <div><h4>Желілер</h4><p>Instagram / Facebook</p></div>
+  </div>
+  <div class="footer-bottom"><p>&copy; 2026 QAZER Hotel Almaty. Барлық құқықтар қорғалған.</p></div>
+</footer>
+
+<script>
+  // Рамка ашылғанда таңдалған бөлме мен бағаны шығару
+  const roomName = localStorage.getItem('selectedRoomName') || 'Standard Room';
+  const roomPrice = localStorage.getItem('selectedRoomPrice') || '49,400 ₸';
+
+  document.getElementById('displayRoomName').innerText = roomName;
+  document.getElementById('displayRoomPrice').innerText = roomPrice;
+  document.getElementById('payBtn').innerText = `${roomPrice} Төлеу және Брондау`;
+
+  function processPayment() {
+    alert(`Төлем сәтті өтті!\nНөмір: ${roomName}\nСомасы: ${roomPrice}\nБрондауыңыз расталды.`);
+    window.location.href = 'index.html';
+  }
+</script>
+
+<div class="author">made by qazer</div>
+</body>
+</html>

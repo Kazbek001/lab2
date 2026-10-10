@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QAZER Hotel — Басты бет</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg-layer"></div>
+
+<header>
+  <div class="container header-row">
+    <div class="logo">QAZER HOTEL</div>
+    <nav>
+      <a href="index.html" class="active">Басты бет</a>
+      <a href="rooms.html">Нөмірлер</a>
+      <a href="services.html">Қызметтер</a>
+      <a href="about.html">Біз туралы</a>
+      <a href="contact.html">Байланыс</a>
+    </nav>
+    <a href="contact.html" class="btn">Брондау</a>
+  </div>
+</header>
+
+<main class="home">
+  <section class="hero">
+    <div class="container">
+      <h1>QAZER Hotel-ге қош келдіңіздер</h1>
+      <p>Жайлылық, ерекше сервис және демалыстың жоғары стандарты</p>
+      <br>
+      <a href="rooms.html" class="btn">Бөлмелерді көру</a>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="booking-bar">
+      <form class="booking-form" onsubmit="event.preventDefault(); goToRooms();">
+        <div class="form-group">
+          <label>Келу күні</label>
+          <input type="date" id="checkInDate" required>
+        </div>
+        <div class="form-group">
+          <label>Кету күні</label>
+          <input type="date" id="checkOutDate" required>
+        </div>
+        <div class="form-group">
+          <label>Қонақтар</label>
+          <select>
+            <option>1 Қонақ</option>
+            <option>2 Қонақ</option>
+            <option>Отбасылық</option>
+          </select>
+        </div>
+        <div class="form-group" style="justify-content: flex-end;">
+          <button type="submit" class="btn">Нөмір іздеу</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 35px;">Танымал Нөмірлер</h2>
+      <div class="grid-3">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=600&q=80" alt="Standard Room">
+          <div class="card-body">
+            <h3 class="card-title">Standard Room</h3>
+             <p>Қонақтарға жайлы тұруға арналған ыңғайлы әрі функционалды нөмір. Нөмірде жайлы төсек, жұмыс үстелі және душы бар жеке жуынатын бөлме қарастырылған. Қонақтарға кондиционер, жалпақ экранды теледидар, тегін Wi-Fi және шай дайындауға арналған шағын аймақ ұсынылады. Нөмірдің тыныш әрі жайлы атмосферасы ұзақ күннен кейін демалуға өте қолайлы.</p>
+            <p style="margin-top: 10px;"><strong>49,400 ₸ / түн</strong></p>
+            <br>
+            <a href="rooms.html" class="btn btn-outline">Толығырақ</a>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80" alt="Deluxe Room">
+          <div class="card-body">
+            <h3 class="card-title">Deluxe Room</h3>
+            <p>Заманауи интерьері бар кең әрі жарық нөмір жайлылық пен әсемдікті үйлестіреді. Нөмірде үлкен төсек, ыңғайлы жұмыс аймағы және ваннасы бар жуынатын бөлме орналасқан. Қонақтарға кондиционер, жалпақ экранды теледидар, тегін Wi-Fi және кофе машинасы ұсынылады. Нөмірдің басты ерекшелігі — демалып, тыныш уақыт өткізуге арналған жайлы демалыс аймағы.
+            </p>
+            <p style="margin-top: 10px;"><strong>74,400 ₸ / түн</strong></p>
+            <br>
+            <a href="rooms.html" class="btn btn-outline">Толығырақ</a>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80" alt="Executive Suite">
+          <div class="card-body">
+            <h3 class="card-title">Executive Suite</h3>
+            <p>Барынша жайлылық пен жеке кеңістікті бағалайтын қонақтарға арналған сәнді нөмір. Нөмірде бөлек жатын бөлме, кең қонақ бөлмесі, жұмыс аймағы және ваннасы бар жуынатын бөлме қарастырылған. Қонақтар арнайы лаундж қызметін пайдалана алады. Лаунджда жеңіл тағамдар мен десерттер, кешкі тағамдар, алкогольді және алкогольсіз сусындар ұсынылады. Сонымен қатар жеке консьерж қызметі, газеттер және тегін Wi-Fi қолжетімді. Нөмір кондиционермен, кофе машинасымен және жалпақ экранды теледидармен жабдықталған.</p>
+            <p style="margin-top: 10px;"><strong>95,400 ₸ / түн</strong></p>
+            <br>
+            <a href="rooms.html" class="btn btn-outline">Толығырақ</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container grid-4">
+    <div><div class="logo">QAZER HOTEL</div><p>Алматы қ., Жандосова 55</p></div>
+    <div><h4>Беттер</h4><p><a href="rooms.html">Нөмірлер</a></p><p><a href="services.html">Қызметтер</a></p></div>
+    <div><h4>Байланыс</h4><p>Тел: +7 (777)-622-56-51</p><p>info@qazer.kz</p></div>
+    <div><h4>Желілер</h4><p>Instagram / Facebook</p></div>
+  </div>
+  <div class="footer-bottom"><p>&copy; 2026 QAZER Hotel Almaty. Барлық құқықтар қорғалған.</p></div>
+</footer>
+
+<script>
+  const checkIn = document.getElementById('checkInDate');
+  const checkOut = document.getElementById('checkOutDate');
+
+  const today = new Date().toISOString().split('T')[0];
+  checkIn.min = today;
+
+  checkIn.addEventListener('change', function() {
+    checkOut.min = this.value;
+    if (checkOut.value && checkOut.value <= this.value) {
+      checkOut.value = '';
+    }
+  });
+
+  // нав ту румс
+
+  function goToRooms() {
+    window.location.href = 'rooms.html';
+  }
+</script>
+
+<div class="author">made by qazer</div>
+</body>
+</html>
