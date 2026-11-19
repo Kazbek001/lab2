@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tasks — QAZER HOTEL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="bg-layer"></div>
+
+<header>
+    <div class="container header-row">
+        <div class="logo">QAZER HOTEL</div>
+
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="rooms.html">Номера</a>
+            <a href="services.html">Услуги</a>
+            <a href="about.html">О нас</a>
+            <a href="contact.html">Контакты</a>
+            <a href="javascript.html" class="active">
+                JavaScript
+            </a>
+        </nav>
+    </div>
+</header>
+
+<main class="section">
+    <div class="container js-lab">
+
+        <h1>Лабораторная работа №4</h1>
+        <p class="lab-description">
+            Практические задания по JavaScript
+        </p>
+
+        <!-- TASK 1 -->
+        <section class="card">
+            <div class="card-body">
+                <h2>Задание 1. Имя пользователя</h2>
+                <p>Введите имя пользователя:</p>
+
+                <div class="task-controls">
+                    <input type="text" id="username"
+                           placeholder="Например, Asan">
+
+                    <button type="button" class="btn"
+                            onclick="showUsername()">
+                        Показать имя
+                    </button>
+                </div>
+
+                <p id="usernameResult" class="js-result"></p>
+            </div>
+        </section>
+
+        <!-- TASK 2 -->
+        <section class="card">
+            <div class="card-body">
+                <h2>Задание 2. Расчёт зарплаты</h2>
+                <p>
+                    Введите количество часов
+                    и почасовую ставку:
+                </p>
+
+                <div class="task-controls">
+                    <input type="number" id="hours"
+                           placeholder="Количество часов"
+                           min="0" step="any">
+
+                    <input type="text" id="rate"
+                           placeholder="Ставка за час">
+
+                    <button type="button" class="btn"
+                            onclick="calculateSalary()">
+                        Рассчитать зарплату
+                    </button>
+                </div>
+
+                <p id="salaryResult" class="js-result"></p>
+            </div>
+        </section>
+
+        <!-- TASK 3 -->
+        <section class="card">
+            <div class="card-body">
+                <h2>Задание 3. Конвертер температуры</h2>
+                <p>
+                    Перевод градусов Цельсия
+                    в Фаренгейты:
+                </p>
+
+                <div class="task-controls">
+                    <input type="text" id="celsius"
+                           placeholder="Температура в °C">
+
+                    <button type="button" class="btn"
+                            onclick="convertTemperature()">
+                        Конвертировать
+                    </button>
+                </div>
+
+                <p id="temperatureResult"
+                   class="js-result"></p>
+            </div>
+        </section>
+
+        <!-- TASK 4 -->
+        <section class="card">
+            <div class="card-body">
+                <h2>
+                    Задание 4. Зарплата со сверхурочными
+                </h2>
+                <p>
+                    До 40 часов — обычная ставка.
+                    От 40 до 60 — ставка × 1.5.
+                    Свыше 60 — ставка × 2.
+                </p>
+
+                <div class="task-controls">
+                    <input type="number"
+                           id="overtimeHours"
+                           placeholder="Количество часов"
+                           min="0" step="any">
+
+                    <input type="number"
+                           id="overtimeRate"
+                           placeholder="Ставка за час"
+                           min="0" step="any">
+
+                    <button type="button" class="btn"
+                            onclick="calculateOvertime()">
+                        Рассчитать
+                    </button>
+                </div>
+
+                <p id="overtimeResult"
+                   class="js-result"></p>
+            </div>
+        </section>
+
+        <!-- TASK 5 -->
+        <section class="card">
+            <div class="card-body">
+                <h2>Задание 5. Сумма нечётных чисел</h2>
+                <p>
+                    Сумма нечётных чисел от 1 до 100
+                    с помощью цикла while.
+                </p>
+
+                <div class="task-controls">
+                    <button type="button" class="btn"
+                            onclick="calculateOddSum()">
+                        Вычислить
+                    </button>
+                </div>
+
+                <p id="oddResult" class="js-result"></p>
+            </div>
+        </section>
+
+        <!-- TASK 6 -->
+        <section class="card">
+            <div class="card-body">
+                <h2>Задание 6. Сумма чётных чисел</h2>
+                <p>
+                    Сумма чётных чисел от 1 до 100
+                    с помощью цикла for.
+                </p>
+
+                <div class="task-controls">
+                    <button type="button" class="btn"
+                            onclick="calculateEvenSum()">
+                        Вычислить
+                    </button>
+                </div>
+
+                <p id="evenResult" class="js-result"></p>
+            </div>
+        </section>
+
+        <!-- TASK 7 -->
+        <section class="card">
+            <div class="card-body">
+                <h2>Задание 7. Статистика массива</h2>
+                <p>
+                    Введите числа через запятую.
+                    Программа найдёт максимум,
+                    минимум и среднее значение.
+                </p>
+
+                <div class="task-controls">
+                    <input type="text"
+                           id="arrayNumbers"
+                           placeholder="10, 20, 30, 40">
+
+                    <button type="button" class="btn"
+                            onclick="calculateArrayStats()">
+                        Вычислить
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TASK 8 -->
+        <section class="card">
+            <div class="card-body">
+                <h2>Задание 8. Уникальные слова</h2>
+                <p>
+                    Программа разделяет текст на слова,
+                    удаляет повторения и сортирует
+                    слова по алфавиту.
+                </p>
+
+                <div class="task-controls">
+                    <button type="button" class="btn"
+                            onclick="sortUniqueWords()">
+                        Отсортировать слова
+                    </button>
+                </div>
+
+                <p id="wordsResult" class="js-result"></p>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<script src="./script.js"></script>
+</body>
+</html>
